@@ -2,7 +2,7 @@
 
 Sentinel-AI is a real-time Network Intrusion Detection System (NIDS) that identifies and explains cyber threats using Deep Learning.
 
-### 🚀 [Live Dashboard on Hugging Face](PASTE_YOUR_LINK_HERE)
+### 🚀 [Live Dashboard on Hugging Face](https://huggingface.co/spaces/xomarouane/sentinel-ai-cybersecurity)
 
 ---
 
