@@ -24,5 +24,34 @@ Modern cybersecurity often suffers from "black-box" AI—where a model detects a
 - Transparent Logic: Interactive Force Plots reveal the feature contributions behind every prediction.
 - Portability: Fully containerized using Docker for consistent deployment.
 
+## Setup
+
+Use Python 3.10 or newer (the model was saved with Keras 3.10). `scikit-learn` is pinned to 1.6.1, the version that wrote `scaler.pkl` and `label_encoder.pkl`.
+
+```bash
+python -m venv .venv
+source .venv/bin/activate   # Windows: .venv\Scripts\activate
+pip install -r requirements.txt
+```
+
+The model, label encoder, and scaler are normal Git files in the repository root (`sentinel_ai_model.keras`, `sentinel_ai_model.h5`, `label_encoder.pkl`, `scaler.pkl`). A clone already contains them; `git lfs pull` is not required.
+
+## Run
+
+```bash
+streamlit run app.py
+```
+
+Streamlit serves the dashboard at `http://localhost:8501`. The app loads `sentinel_ai_model.keras`, `label_encoder.pkl`, and `scaler.pkl` from the same directory as `app.py` on startup.
+
+### Docker
+
+```bash
+docker build -t sentinel-ai .
+docker run --rm -p 7860:7860 sentinel-ai
+```
+
+Then open `http://localhost:7860`.
+
 ---
 *Developed as a demonstration of applying Deep Learning and XAI to modern cybersecurity challenges.*
